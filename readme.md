@@ -1,16 +1,19 @@
-# King of Beers [made by faster Forward](http://fasterforward.com.au)
-
+# King of Beers - the drinking game of choice at [Faster Forward](http://fasterforward.com.au)
 
 
 ## Quick start
 
-Download it all
+1. Download it all
+2. Go to the fridge and get 3 - 4 drinks per person at the table
+3. Open index.html
+4. Click cards to flip them over, follow instructions
+5. lol
 
 ## Features
 
 * Gets the party started
 * Has built in rules
-* There are many incomplete parts that will crash on you
+* Custom rules feature does not work
 
 ## Contributing
 
