@@ -1,0 +1,130 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>kob</title>
+  <meta name="description" content="">
+
+  <!-- Mobile viewport optimized: h5bp.com/viewport -->
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+  <link rel="stylesheet" href="css/style.css">
+<link href='http://fonts.googleapis.com/css?family=Graduate' rel='stylesheet' type='text/css'>
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+    <div id="grooveshark">
+    	<div id="playlists">
+        </div>
+        <div id="groovesharkContainer">
+<object width="250" height="500" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsManySongs321322113361511049" name="gsManySongs321322113361511049"><param name="movie" value="http://grooveshark.com/widget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs=32132211,33615110,33319638,33223469,31788461,33615107,25456287&bbg=b9e1f7&bth=b9e1f7&pfg=b9e1f7&lfg=b9e1f7&bt=000000&pbg=000000&pfgh=000000&si=000000&lbg=000000&lfgh=000000&sb=000000&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/widget.swf" width="250" height="500"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs=32132211,33615110,33319638,33223469,31788461,33615107,25456287&bbg=b9e1f7&bth=b9e1f7&pfg=b9e1f7&lfg=b9e1f7&bt=000000&pbg=000000&pfgh=000000&si=000000&lbg=000000&lfgh=000000&sb=000000&bfg=666666&pbgh=666666&lbgh=666666&sbh=666666&p=0" /></object></object>
+    	</div>
+    </div>
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+   chromium.org/developers/how-tos/chrome-frame-getting-started -->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<header class="menubar fixedTop">
+	<h4 class="fltLft logo">Kings</h4>
+    <span id="loginButton" class="fltRht" onClick="login()">Login</span>
+    <span id="restart" class="fltRht"  onClick="restartGame()">Restart</span>
+    <span class="fltRht musicOnOff" onClick="changeMusic()">Off</span>
+    
+     
+</header>
+
+
+
+    <div id="main">
+    <span id="kingCount">Kings Left: <span>4</span></span>
+    <div id="cardHistory"><div></div> <ul></ul></div>
+    	<div id="cardPile">
+        </div><div style="clear:both"></div>  
+    </div>
+    
+    
+    
+    <div id="setup">
+        <h1>Setup Your Game!</h1>
+        <div class="whiteBackground">
+        	<h3>Rules:</h3>
+        	<span id="ruleName">Standard</span><a href="#" onClick="changeRuleset()" class="buttonNormal fltRht" style="font-size:28px">Change</a><br/>
+        </div><br/>
+        <div class="whiteBackground" id="musicSettingsBox">
+            <h3>Music:</h3><span class="musicOnOff">Off</span><a href="#" onClick="changeMusic()" class="buttonNormal fltRht" style="font-size:28px">Turn on</a><br/>
+		</div><br/><br/><br/>
+
+        <a href="#" onClick="loadGameplay()" class="buttonNormal" style="font-size:50px; padding-left:60px; padding-right:60px">Play!</a>
+    </div>
+    
+    
+    <div id="rules">
+        <h1>Choose your Rules!</h1>
+        <div class="whiteBackground">
+        	</span><span>Standard</span>
+            <a href="#" onClick="playStandardRules()" class="buttonNormal fltRht" style="font-size:24px">Play this</a>
+        </div><br/>
+        <div class="whiteBackground">
+            <span>Custom</span>
+			<a href="#" onClick="playCustomRules()" class="buttonNormal fltRht" style="font-size:24px">Play this</a>
+            <a href="#" onClick="setCustomRules()" class="buttonNormal fltRht" style="font-size:24px">Setup</a>
+		</div><br/>
+    </div>
+<footer class="menubar fixedBottom">
+<span id="ruleDescription"></span>
+
+</footer>
+<div id="inputRules">
+	<table>
+    	<tr>
+        	<td id="ruleCardName"><h2>Card: <span></span></h2></td><td onClick="closeCustomRules()">Cancel</td>
+        </tr>
+        <tr>
+        	<td id="ruleCardInput">
+            	<input id ="ruleValue" type="text" action="submitCustomRule" autofocus="autofocus" ></input><a href="#" onClick="submitCustomRule()" class="buttonNormal"> Set Next Rule!</a>
+                <input type="text" name="stupidenterfixer" value="Fix IE bug" style="display:none" />
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="blockUI"></div>
+<div id="alert">Loading...</div>
+<div id="notification"><h3></h3><b></b></div>
+<div id="confirmation"></div>
+<!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+--> <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <!-- scripts concatenated and minified via build script -->
+  <script src="js/plugins.js"></script><script src="js/script.js"></script>
+
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+<!--  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+-->
+<img src="img/allcardssm.png" onload="loadImage()" style="display:none; width:1px; height:1px">
+</body>
+</html>
