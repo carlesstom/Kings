@@ -7,7 +7,7 @@
 2. Go to the fridge and get 3 - 4 drinks per person at the table
 3. Open index.html
 4. Click cards to flip them over, follow instructions
-5. lol
+5. lolol
 
 ## Features
 
@@ -17,7 +17,11 @@
 
 ## Contributing
 
-Anyone and everyone is welcome to contribute
+Anyone and everyone is welcome to contribute.
+
+## Party Pics
+
+If you use this and have a great time, please send photos to me at tom@fasterforward.com.au
 
 ## License
 
